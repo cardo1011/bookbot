@@ -14,15 +14,28 @@ def count_char_in(text_as_string):
     for char in all_text_to_lower_case:
         if char in char_count:
             char_count[char] = char_count[char] + 1
-        # decided to exc
-        elif char == " " or char == "\n" or char == '™':
-            pass
         else:
             char_count[char] = 1
     return char_count
 
 
-# def sort_char_count(dict):
-#     characters = {"char"}
-#     for char in dict:
+def sort_on(list_of_dictionaries):
+    return list_of_dictionaries["num"]
+
+def sort_dict(dict):
+    char_dict_list =[]
+    
+    for i in dict:
+        if i.isalpha():
+            char_dict_list.append(
+                {"char": i, "num": dict[i]}
+            )
+
+    char_dict_list.sort(reverse=True, key=sort_on)
+    return char_dict_list
+
+
+
+
+    
         
